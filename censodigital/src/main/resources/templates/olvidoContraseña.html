@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+    <title>Censo Digital</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" th:href="@{/img/favicon.ico}" href="../../img/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/bootstrap.min.css}"
+          href="../../bootstrap/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/font-awesome.min.css}" href="../../css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/material-design-iconic-font.min.css}"
+          href="../../css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/animate.css}" href="../../css/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/hamburgers.min.css}" href="../../css/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/animsition.min.css}" href="../../css/animsition.min.css">
+    <!--============================================== =================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/select2.min.css}" href="../../css/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/daterangepicker.css}" href="../../css/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/util.css}" href="../../css/util.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="../../css/main.css">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+<div class="limiter">
+    <div class="container-login100"
+         th:style="'background: url(/img/bg-01.jpg) no-repeat center center fixed;background-size: cover;'">
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+            <form class="login100-form validate-form">
+					<span class="login100-form-title p-b-49">
+						Recuperar Contraseña
+					</span>
+
+                <div class="wrap-input100 validate-input m-b-23" data-validate="Correo es requerido">
+                    <span class="label-input100">Correo</span>
+                    <input class="input100" type="text" name="username" placeholder="Escriba su correo">
+                    <span class="focus-input100" data-symbol="&#xf206;"></span>
+                </div>
+                <div class="text-right p-t-8 p-b-31">
+                </div>
+
+                <div class="container-login100-form-btn" style="
+    float: right;
+    width: 40%;">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button class="login100-form-btn" style="text-align: center;  text-transform: none">
+                            Guardar
+                        </button>
+                    </div>
+                </div>
+
+                <div class="container-login100-form-btn" style="
+    float: left;
+    width: 40%;">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <a th:href="@{/login}"  class="login100-form-btn" style="text-align: center;  text-transform: none">
+                            Cancelar
+                        </a>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+<script th:src="@{/js/jquery-3.2.1.min.js}" src="../../js/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script th:src="@{/js/animsition.min.js}" src="../../js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script th:src="@{/js/popper.js}" src="../../js/popper.js"></script>
+<script th:src="@{/js/bootstrap.min.j}" src="../../js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script th:src="@{/js/select2.min.js}" src="../../js/select2.min.js"></script>
+<!--===============================================================================================-->
+<script th:src="@{/js/moment.min.js}" src="../../js/moment.min.js"></script>
+<script th:src="@{/js/daterangepicker.js}" src="../../js/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script th:src="@{/js/countdowntime.js}" src="../../js/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script th:src="@{/js/main.js}" src="../../js/main.js"></script>
+
+</body>
+</html>

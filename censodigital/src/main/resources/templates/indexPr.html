@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/jdbc">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gentelella Alela! | </title>
+
+
+    <!-- iCheck -->
+	
+    <!-- bootstrap-progressbar -->
+    <!-- JQVMap -->
+    <!-- bootstrap-daterangepicker -->
+
+    <!-- Custom Theme Style -->
+
+	    <link rel="stylesheet" type="text/css" th:href="@{/css2/custom.min.css}" href="../css2/custom.min.css">
+      <!--<link rel="stylesheet" type="text/css" th:href="@{/css/material-design-iconic-font.min.css}" href="../../css/material-design-iconic-font.min.css">-->
+
+       <link rel="stylesheet" type="text/css" th:href="@{/css/font-awesome.min.css}" href="../../css/font-awesome.min.css">
+   <!--<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" href="../../css/bootstrap.min.css">-->
+   <!--<link rel="stylesheet" type="text/css" th:href="@{/css/datatables.min.css}" href="../../css/datatables.min.css">-->
+     <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/bootstrap.min.css}" href="../../bootstrap/bootstrap.min.css">
+     <!--===============================================================================================-->
+      <!--<link rel="stylesheet" type="text/css" th:href="@{/css/font-awesome.min.css}" href="../../css/font-awesome.min.css">-->
+      <!--<link rel="stylesheet" type="text/css" th:href="@{/css/font-awesome.min.css}" href="../../css/font-awesome.min.css">-->
+
+      <!--===============================================================================================-->
+      <!--<link rel="stylesheet" type="text/css" th:href="@{/css/material-design-iconic-font.min.css}" href="../../css/material-design-iconic-font.min.css">-->
+      <!--===============================================================================================-->
+      <!--<link rel="stylesheet" type="text/css" th:href="@{/css/animate.css}" href="../../css/animate.css">-->
+      <!--===============================================================================================-->
+      <!--<link rel="stylesheet" type="text/css" th:href="@{/css/hamburgers.min.css}" href="../../css/hamburgers.min.css">-->
+      <!--===============================================================================================-->
+      <!--<link rel="stylesheet" type="text/css" th:href="@{/css/animsition.min.css}" href="../../css/animsition.min.css">-->
+      <!--============================================== =================================================-->
+      <!--<link rel="stylesheet" type="text/css" th:href="@{/css/select2.min.css}" href="../../css/select2.min.css">-->
+      <!--===============================================================================================-->
+      <!--<link rel="stylesheet" type="text/css" th:href="@{/css/daterangepicker.css}" href="../../css/daterangepicker.css">-->
+      <!--===============================================================================================-->
+      <!--<link rel="stylesheet" type="text/css" th:href="@{/css/util.css}" href="../../css/util.css">-->
+      <!--<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"   href="../../css/main.css">-->
+
+      <!--<script th:src="@{/jquery/jquery.js}" src="../../jquery/jquery.js}"></script>-->
+     
+      <!--<script th:src="@{/js/datatables.js}" src="../../js/datatables.js"></script>-->
+    	    <script th:src="@{/js/jquery-3.3.1.min.js}" src="../../js/jquery-3.3.1.min.js"></script>
+      <!--<script th:src="@{/jquery/custom.min.js}" src="../../jquery/custom.min.js"></script>-->
+
+<!---	<script th:src="@{/jquery/jquery.min.js}" src="../../jquery/jquery.min.js"></script>-->
+     <!-- <script th:src="@{/js/jquery-3.2.1.min.js}" src="../../js/jquery-3.2.1.min.js"></script>-->
+	   <!--<script th:src="@{/js/jquery-3.3.1.js}" src="../../js/jquery-3.3.1.js"></script>-->
+      <!--===============================================================================================-->
+      <script th:src="@{/js/animsition.min.js}" src="../../js/animsition.min.js"></script>
+      <script th:src="@{/js/main.js}" src="../../js/main.js"></script>
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">     
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-home"></i> Censo<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="index.html">Registrar</a></li>
+                  
+                    </ul>
+                  </li>          
+                </ul>
+              </div>
+             
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+             
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout"  th:href="@{/logout}">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+            
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <!-- top tiles -->
+         
+          <!-- /top tiles -->
+
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="dashboard_graph">
+				  <table id="example" class="table table-striped jambo_table bulk_action "
+                       style="width:100%;">
+
+                    <thead>
+                    <tr class='headings' data-href='detalles1'>
+                        <th>Persona</th>
+                        <th>Cedula</th>
+                        <th>Profesi&oacute;n</th>
+                        <th>Sexo</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td> Gerardo Montero</td>
+						 <td>22.523.235</td>
+						<td>Ingeniero</td>
+                       <td>Masculino</td>
+                    </tr>
+					<tr>
+                        <td> Rosemary Henriquez</td>
+						 <td>12.113.889</td>
+						<td>Contador Publico</td>
+                       <td>Femenino</td>
+                    </tr>
+					<tr>
+                        <td> Nandy Da Costa</td>
+						 <td>12.113.889</td>
+						<td>Arquitecto</td>
+                       <td>Femenino</td>
+                    </tr>
+					<tr>
+                        <td> Rosemary Henriquez</td>
+						 <td>12.113.889</td>
+						<td>Contador Publico</td>
+                       <td>Femenino</td>
+                    </tr>
+				
+				
+                    </tbody>
+                </table>
+                <div class="row x_title">
+                  <div class="col-md-6">
+                    
+                  </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-12">       
+                </div>          
+               <div class="clearfix"></div>
+              </div>
+            </div>
+
+          </div>
+          <br />
+		  <script th:inline="javascript" defer>
+       $(document).ready( function () {
+    $('#example').DataTable();
+} );
+</script>
+        </div>
+
+        <footer>
+        </footer>
+      </div>
+    </div>
+
+   
+	
+  </body>
+</html>
