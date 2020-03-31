@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div th:replace="fragments/headerDashboard :: header-css"/>
+</head>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+
+        <div th:replace="fragments/sideBarMenu :: sideBarMenu"/>
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <br/>
+            <div class="col-md-12 ">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Situación de Vivienda
+                            <small></small>
+                        </h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br/>
+                        <form class="form-label-left input_mask" data-parsley-validate="true" th:action="@{/situacionSalud}" th:object="${censoDigitalEntity}"  method="post">
+
+
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <select class="form-control" id="animalEntity" th:object="${animalEntityList}"
+                                        th:name="animalEntity"
+                                        required="true" style="width: 100%; float: left; text-align-last:center">
+                                    <option value="">Presencia Animal</option>
+                                    <option th:each="animalList : ${animalEntityList}"
+                                            th:text=" ${animalList.descripcion}"
+                                            th:value="${animalList.idAnimal}">
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <select class="form-control" id="tipoInsectoEntity" th:object="${tipoInsectoEntityList}"
+                                        th:name="tipoInsectoEntity"
+                                        required="true" style="width: 100%; float: left; text-align-last:center">
+                                    <option value="">Tipo Insectos</option>
+                                    <option th:each="tipoInsectoList : ${tipoInsectoEntityList}"
+                                            th:text=" ${tipoInsectoList.descripcion}"
+                                            th:value="${tipoInsectoList.idTipoInsecto}">
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <select class="form-control" id="realizaActividadComercial" th:name="realizaActividadComercial"
+                                        required="true" style="width: 100%; float: left; text-align-last:center">
+                                    <option value="">Actividad Comercial en Vivienda</option>
+                                    <option th:value="S">Sí
+                                    </option>
+                                    <option th:value="N">No
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <select class="form-control" id="tipoParedesEntity" th:object="${tipoParedesEntityList}"
+                                        th:name="tipoParedesEntity"
+                                        required="true" style="width: 100%; float: left; text-align-last:center">
+                                    <option value="">Tipo Paredes</option>
+                                    <option th:each="tipoParedesList : ${tipoParedesEntityList}"
+                                            th:text=" ${tipoParedesList.descripcion}"
+                                            th:value="${tipoParedesList.idTipoParedes}">
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <select class="form-control" id="tipoTechoEntity" th:object="${tipoTechoEntityList}"
+                                        th:name="tipoTechoEntity"
+                                        required="true" style="width: 100%; float: left; text-align-last:center">
+                                    <option value="">Tipo Techo</option>
+                                    <option th:each="tipoTechoList : ${tipoTechoEntityList}"
+                                            th:text=" ${tipoTechoList.descripcion}"
+                                            th:value="${tipoTechoList.idTipoTecho}">
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <select class="form-control" id="formaTenenciaEntity" th:object="${formaTenenciaEntityList}"
+                                        th:name="formaTenenciaEntity"
+                                        required="true" style="width: 100%; float: left; text-align-last:center">
+                                    <option value="">Forma de Tenencia</option>
+                                    <option th:each="formaTenenciaList : ${formaTenenciaEntityList}"
+                                            th:text=" ${formaTenenciaList.descripcion}"
+                                            th:value="${formaTenenciaList.idFormaTenencia}">
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <select class="form-control" id="condicionTerrenoEntity" th:object="${condicionTerrenoEntityList}"
+                                        th:name="condicionTerrenoEntity"
+                                        required="true" style="width: 100%; float: left; text-align-last:center">
+                                    <option value="">Condicion Terreno</option>
+                                    <option th:each="condicionTerrenoList : ${condicionTerrenoEntityList}"
+                                            th:text=" ${condicionTerrenoList.descripcion}"
+                                            th:value="${condicionTerrenoList.idCondicionTerreno}">
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-12">
+                                <a type="button" class="btn btn-primary" style="width: 40%;float: left" href="indexPr">
+                                    Cancelar</a>
+                                <button type="submit" class="btn btn-success" style="width: 40%;float: right">Siguiente
+                                </button>
+                            </div>
+                            <!--</div>-->
+
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    <!-- /page content -->
+
+</div>
+</div>
+<!-- footer content -->
+<div th:replace="fragments/footerDashboard :: footer"/>
+<!-- /footer content -->
+</body>
+</html>

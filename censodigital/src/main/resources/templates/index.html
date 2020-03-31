@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div th:replace="fragments/headerDashboard :: header-css"/>
+</head>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+
+        <div th:replace="fragments/sideBarMenu :: sideBarMenu"/>
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <br/>
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12 ">
+                    <table id="example" class="table table-striped jambo_table bulk_action "
+                           style="width:100%;">
+
+                        <thead>
+                        <tr class='headings' data-href='detalles1'>
+                            <th>Persona</th>
+                            <th>Cedula</th>
+                            <th>Profesi&oacute;n</th>
+                            <th>Sexo</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td> Gerardo Montero</td>
+                            <td>22.523.235</td>
+                            <td>Ingeniero</td>
+                            <td>Masculino</td>
+                        </tr>
+                        <tr>
+                            <td> Rosemary Henriquez</td>
+                            <td>12.113.889</td>
+                            <td>Contador Publico</td>
+                            <td>Femenino</td>
+                        </tr>
+                        <tr>
+                            <td> Nandy Da Costa</td>
+                            <td>12.113.889</td>
+                            <td>Arquitecto</td>
+                            <td>Femenino</td>
+                        </tr>
+                        <tr>
+                            <td> Rosemary Henriquez</td>
+                            <td>12.113.889</td>
+                            <td>Contador Publico</td>
+                            <td>Femenino</td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <!--<div class="dashboard_graph x_panel">-->
+                        <!--<div class="x_title">-->
+                            <!--<div class="col-md-6">-->
+                                <!--<h3>Network Activities-->
+                                    <!--<small>Graph title sub-title</small>-->
+                                <!--</h3>-->
+                            <!--</div>-->
+                            <!--<div class="col-md-6">-->
+                                <!--<div id="reportrange" class="pull-right"-->
+                                     <!--style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">-->
+                                    <!--<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>-->
+                                    <!--<span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="x_content">-->
+                            <!--<div class="demo-container" style="height:250px">-->
+                                <!--<div id="chart_plot_03" class="demo-placeholder"></div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- /page content -->
+
+</div>
+</div>
+<!-- footer content -->
+<div th:replace="fragments/footerDashboard :: footer"/>
+<!-- /footer content -->
+</body>
+</html>

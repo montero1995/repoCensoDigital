@@ -32,15 +32,16 @@ public class CensoDigitalEntity {
     @Column(name = "numero_censo")
     private Integer numeroCenso;
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @Temporal(TemporalType.DATE)
     @Column(name = "fecha_censo")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaCenso;
 
     @Column(name = "estado")
     private String estado;
 
     @Column(name = "municipio")
-    private  String municipio;
+    private String municipio;
 
     @Column(name = "parroquia")
     private String parroquia;
@@ -49,16 +50,16 @@ public class CensoDigitalEntity {
     private String sector;
 
     @Column(name = "nombre_comunidad")
-    private String nombre_comunidad;
+    private String nombreComunidad;
 
     @Column(name = "direccion")
     private String direccion;
 
     @Column(name = "nombre_persona")
-    private String nombre_persona;
+    private String nombrePersona;
 
     @Column(name = "apellido_persona")
-    private String apellido_persona;
+    private String apellidoPersona;
 
     @Column(name = "cedula")
     private String cedula;
@@ -67,8 +68,9 @@ public class CensoDigitalEntity {
     @JoinColumn(name = "id_nacionalidad")
     private NacionalidadEntity nacionalidadEntity;
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @Temporal(TemporalType.DATE)
     @Column(name = "fecha_nacimiento")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaNacimiento;
 
     @Column(name = "edad")
@@ -100,43 +102,45 @@ public class CensoDigitalEntity {
 
 
     @Column(name = "profesion_oficio")
-    private String profesion_oficio;
+    private String profesionOficio;
 
 
     @Column(name = "trabaja")
     private String trabaja;
 
     @Column(name = "embarazo_temprano")
-    private String embarazo_temprano;
+    private String embarazoTemprano;
 
     @ManyToOne
     @JoinColumn(name = "id_frecuencia_ingreso")
     private FrecuenciaIngresoEntity frecuenciaIngresoEntity;
 
     @Column(name = "email_persona")
-    private String email_persona;
+    private String emailPersona;
+
 
 
     @Column(name = "tlf_habitacion_persona")
-    private String tlf_habitacion_persona;
+    private String tlfHabitacionPersona;
 
     @Column(name = "tlf_celular_persona")
-    private String tlf_celular_persona;
+    private String tlfCelularPersona;
 
     @Column(name = "tlf_oficina_persona")
-    private String tlf_oficina_persona;
+    private String tlfOficinaPersona;
 
 
     @ManyToOne
     @JoinColumn(name = "id_sector_trabajo")
     private SectorTrabajoEntity sectorTrabajoEntity;
 
+
     @ManyToOne
     @JoinColumn(name = "id_tipo_comercio")
     private TipoComercioEntity tipoComercioEntity;
 
     @Column(name = "realiza_actividad_comercial")
-    private String realiza_actividad_comercial;
+    private String realizaActividadComercial;
 
     @ManyToOne
     @JoinColumn(name = "id_cantidad_ingreso")
@@ -214,10 +218,16 @@ public class CensoDigitalEntity {
     @JoinColumn(name = "id_tipo_padecimiento")
     private TipoPadecimientoEntity tipoPadecimientoEntity;
 
+    @Column(name = "presencia_insectos")
+    private  String presenciaInsectos;
+
+    @Column(name = "presencia_animal")
+    private  String presenciaAnimal;
+
     public CensoDigitalEntity() {
     }
 
-    public CensoDigitalEntity(String nombreConsejoComunal, String codigo, String rif, String numeroCuenta, Integer numeroCenso, Date fechaCenso, String estado, String municipio, String parroquia, String sector, String nombre_comunidad, String direccion, String nombre_persona, String apellido_persona, String cedula, NacionalidadEntity nacionalidadEntity, Date fechaNacimiento, String edad, String tiempoComunidad, String cne, SexoEntity sexoEntity, String incapacidad, String pensionado, EstadoCivilEntity estadoCivilEntity, NivelInstruccionEntity nivelInstruccionEntity, String profesion_oficio, String trabaja, String embarazo_temprano, FrecuenciaIngresoEntity frecuenciaIngresoEntity, String email_persona, String tlf_habitacion_persona, String tlf_celular_persona, String tlf_oficina_persona, SectorTrabajoEntity sectorTrabajoEntity, TipoComercioEntity tipoComercioEntity, String realiza_actividad_comercial, CantidadIngresoEntity cantidadIngresoEntity, CondicionTerrenoEntity condicionTerrenoEntity, FormaTenenciaEntity formaTenenciaEntity, TipoParedesEntity tipoParedesEntity, TipoTechoEntity tipoTechoEntity, TipoInsectoEntity tipoInsectoEntity, AnimalEntity animalEntity, String ayudaFamiliar, SituacionExclusionEntity situacionExclusionEntity, TipoAguasBlancasEntity aguasBlancasEntity, TipoAguasServidasEntity aguasServidasEntity, TipoGasEntity gasEntity, TipoSistemaElectricoEntity sistemaElectricoEntity, TipoRecoleccionBasuraEntity recoleccionBasuraEntity, TelefoniaEntity telefoniaEntity, TransporteEntity transporteEntity, TipoMecanismoInformacionEntity tipoMecanismoInformacionEntity, ServiciosComunalesEntity serviciosComunalesEntity, TipoPadecimientoEntity tipoPadecimientoEntity) {
+    public CensoDigitalEntity(String nombreConsejoComunal, String codigo, String rif, String numeroCuenta, Integer numeroCenso, Date fechaCenso, String estado, String municipio, String parroquia, String sector, String nombreComunidad, String direccion, String nombrePersona, String apellidoPersona, String cedula, NacionalidadEntity nacionalidadEntity, Date fechaNacimiento, String edad, String tiempoComunidad, String cne, SexoEntity sexoEntity, String incapacidad, String pensionado, EstadoCivilEntity estadoCivilEntity, NivelInstruccionEntity nivelInstruccionEntity, String profesionOficio, String trabaja, String embarazoTemprano, FrecuenciaIngresoEntity frecuenciaIngresoEntity, String emailPersona, String tlfHabitacionPersona, String tlfCelularPersona, String tlfOficinaPersona, SectorTrabajoEntity sectorTrabajoEntity, TipoComercioEntity tipoComercioEntity, String realizaActividadComercial, CantidadIngresoEntity cantidadIngresoEntity, CondicionTerrenoEntity condicionTerrenoEntity, FormaTenenciaEntity formaTenenciaEntity, TipoParedesEntity tipoParedesEntity, TipoTechoEntity tipoTechoEntity, TipoInsectoEntity tipoInsectoEntity, AnimalEntity animalEntity, String ayudaFamiliar, SituacionExclusionEntity situacionExclusionEntity, TipoAguasBlancasEntity aguasBlancasEntity, TipoAguasServidasEntity aguasServidasEntity, TipoGasEntity gasEntity, TipoSistemaElectricoEntity sistemaElectricoEntity, TipoRecoleccionBasuraEntity recoleccionBasuraEntity, TelefoniaEntity telefoniaEntity, TransporteEntity transporteEntity, TipoMecanismoInformacionEntity tipoMecanismoInformacionEntity, ServiciosComunalesEntity serviciosComunalesEntity, TipoPadecimientoEntity tipoPadecimientoEntity, String presenciaInsectos, String presenciaAnimal) {
         this.nombreConsejoComunal = nombreConsejoComunal;
         this.codigo = codigo;
         this.rif = rif;
@@ -228,10 +238,10 @@ public class CensoDigitalEntity {
         this.municipio = municipio;
         this.parroquia = parroquia;
         this.sector = sector;
-        this.nombre_comunidad = nombre_comunidad;
+        this.nombreComunidad = nombreComunidad;
         this.direccion = direccion;
-        this.nombre_persona = nombre_persona;
-        this.apellido_persona = apellido_persona;
+        this.nombrePersona = nombrePersona;
+        this.apellidoPersona = apellidoPersona;
         this.cedula = cedula;
         this.nacionalidadEntity = nacionalidadEntity;
         this.fechaNacimiento = fechaNacimiento;
@@ -243,17 +253,17 @@ public class CensoDigitalEntity {
         this.pensionado = pensionado;
         this.estadoCivilEntity = estadoCivilEntity;
         this.nivelInstruccionEntity = nivelInstruccionEntity;
-        this.profesion_oficio = profesion_oficio;
+        this.profesionOficio = profesionOficio;
         this.trabaja = trabaja;
-        this.embarazo_temprano = embarazo_temprano;
+        this.embarazoTemprano = embarazoTemprano;
         this.frecuenciaIngresoEntity = frecuenciaIngresoEntity;
-        this.email_persona = email_persona;
-        this.tlf_habitacion_persona = tlf_habitacion_persona;
-        this.tlf_celular_persona = tlf_celular_persona;
-        this.tlf_oficina_persona = tlf_oficina_persona;
+        this.emailPersona = emailPersona;
+        this.tlfHabitacionPersona = tlfHabitacionPersona;
+        this.tlfCelularPersona = tlfCelularPersona;
+        this.tlfOficinaPersona = tlfOficinaPersona;
         this.sectorTrabajoEntity = sectorTrabajoEntity;
         this.tipoComercioEntity = tipoComercioEntity;
-        this.realiza_actividad_comercial = realiza_actividad_comercial;
+        this.realizaActividadComercial = realizaActividadComercial;
         this.cantidadIngresoEntity = cantidadIngresoEntity;
         this.condicionTerrenoEntity = condicionTerrenoEntity;
         this.formaTenenciaEntity = formaTenenciaEntity;
@@ -273,6 +283,8 @@ public class CensoDigitalEntity {
         this.tipoMecanismoInformacionEntity = tipoMecanismoInformacionEntity;
         this.serviciosComunalesEntity = serviciosComunalesEntity;
         this.tipoPadecimientoEntity = tipoPadecimientoEntity;
+        this.presenciaInsectos = presenciaInsectos;
+        this.presenciaAnimal = presenciaAnimal;
     }
 
     public Integer getIdCensoDigital() {
@@ -363,12 +375,12 @@ public class CensoDigitalEntity {
         this.sector = sector;
     }
 
-    public String getNombre_comunidad() {
-        return nombre_comunidad;
+    public String getNombreComunidad() {
+        return nombreComunidad;
     }
 
-    public void setNombre_comunidad(String nombre_comunidad) {
-        this.nombre_comunidad = nombre_comunidad;
+    public void setNombreComunidad(String nombreComunidad) {
+        this.nombreComunidad = nombreComunidad;
     }
 
     public String getDireccion() {
@@ -379,20 +391,20 @@ public class CensoDigitalEntity {
         this.direccion = direccion;
     }
 
-    public String getNombre_persona() {
-        return nombre_persona;
+    public String getNombrePersona() {
+        return nombrePersona;
     }
 
-    public void setNombre_persona(String nombre_persona) {
-        this.nombre_persona = nombre_persona;
+    public void setNombrePersona(String nombrePersona) {
+        this.nombrePersona = nombrePersona;
     }
 
-    public String getApellido_persona() {
-        return apellido_persona;
+    public String getApellidoPersona() {
+        return apellidoPersona;
     }
 
-    public void setApellido_persona(String apellido_persona) {
-        this.apellido_persona = apellido_persona;
+    public void setApellidoPersona(String apellidoPersona) {
+        this.apellidoPersona = apellidoPersona;
     }
 
     public String getCedula() {
@@ -483,12 +495,12 @@ public class CensoDigitalEntity {
         this.nivelInstruccionEntity = nivelInstruccionEntity;
     }
 
-    public String getProfesion_oficio() {
-        return profesion_oficio;
+    public String getProfesionOficio() {
+        return profesionOficio;
     }
 
-    public void setProfesion_oficio(String profesion_oficio) {
-        this.profesion_oficio = profesion_oficio;
+    public void setProfesionOficio(String profesionOficio) {
+        this.profesionOficio = profesionOficio;
     }
 
     public String getTrabaja() {
@@ -499,12 +511,12 @@ public class CensoDigitalEntity {
         this.trabaja = trabaja;
     }
 
-    public String getEmbarazo_temprano() {
-        return embarazo_temprano;
+    public String getEmbarazoTemprano() {
+        return embarazoTemprano;
     }
 
-    public void setEmbarazo_temprano(String embarazo_temprano) {
-        this.embarazo_temprano = embarazo_temprano;
+    public void setEmbarazoTemprano(String embarazoTemprano) {
+        this.embarazoTemprano = embarazoTemprano;
     }
 
     public FrecuenciaIngresoEntity getFrecuenciaIngresoEntity() {
@@ -515,36 +527,36 @@ public class CensoDigitalEntity {
         this.frecuenciaIngresoEntity = frecuenciaIngresoEntity;
     }
 
-    public String getEmail_persona() {
-        return email_persona;
+    public String getEmailPersona() {
+        return emailPersona;
     }
 
-    public void setEmail_persona(String email_persona) {
-        this.email_persona = email_persona;
+    public void setEmailPersona(String emailPersona) {
+        this.emailPersona = emailPersona;
     }
 
-    public String getTlf_habitacion_persona() {
-        return tlf_habitacion_persona;
+    public String getTlfHabitacionPersona() {
+        return tlfHabitacionPersona;
     }
 
-    public void setTlf_habitacion_persona(String tlf_habitacion_persona) {
-        this.tlf_habitacion_persona = tlf_habitacion_persona;
+    public void setTlfHabitacionPersona(String tlfHabitacionPersona) {
+        this.tlfHabitacionPersona = tlfHabitacionPersona;
     }
 
-    public String getTlf_celular_persona() {
-        return tlf_celular_persona;
+    public String getTlfCelularPersona() {
+        return tlfCelularPersona;
     }
 
-    public void setTlf_celular_persona(String tlf_celular_persona) {
-        this.tlf_celular_persona = tlf_celular_persona;
+    public void setTlfCelularPersona(String tlfCelularPersona) {
+        this.tlfCelularPersona = tlfCelularPersona;
     }
 
-    public String getTlf_oficina_persona() {
-        return tlf_oficina_persona;
+    public String getTlfOficinaPersona() {
+        return tlfOficinaPersona;
     }
 
-    public void setTlf_oficina_persona(String tlf_oficina_persona) {
-        this.tlf_oficina_persona = tlf_oficina_persona;
+    public void setTlfOficinaPersona(String tlfOficinaPersona) {
+        this.tlfOficinaPersona = tlfOficinaPersona;
     }
 
     public SectorTrabajoEntity getSectorTrabajoEntity() {
@@ -563,12 +575,12 @@ public class CensoDigitalEntity {
         this.tipoComercioEntity = tipoComercioEntity;
     }
 
-    public String getRealiza_actividad_comercial() {
-        return realiza_actividad_comercial;
+    public String getRealizaActividadComercial() {
+        return realizaActividadComercial;
     }
 
-    public void setRealiza_actividad_comercial(String realiza_actividad_comercial) {
-        this.realiza_actividad_comercial = realiza_actividad_comercial;
+    public void setRealizaActividadComercial(String realizaActividadComercial) {
+        this.realizaActividadComercial = realizaActividadComercial;
     }
 
     public CantidadIngresoEntity getCantidadIngresoEntity() {
@@ -721,5 +733,21 @@ public class CensoDigitalEntity {
 
     public void setTipoPadecimientoEntity(TipoPadecimientoEntity tipoPadecimientoEntity) {
         this.tipoPadecimientoEntity = tipoPadecimientoEntity;
+    }
+
+    public String getPresenciaInsectos() {
+        return presenciaInsectos;
+    }
+
+    public void setPresenciaInsectos(String presenciaInsectos) {
+        this.presenciaInsectos = presenciaInsectos;
+    }
+
+    public String getPresenciaAnimal() {
+        return presenciaAnimal;
+    }
+
+    public void setPresenciaAnimal(String presenciaAnimal) {
+        this.presenciaAnimal = presenciaAnimal;
     }
 }

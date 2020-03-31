@@ -41,7 +41,17 @@ public class LoginController {
     @PostMapping("/guardarUsuario")
     ModelAndView guardarUsuario(UsuarioEntity usuarioEntity) {
         ModelAndView modelAndView= new ModelAndView();
-       Boolean guardarUsuario= loginService.salvarNuevoUsuario(usuarioEntity);
+        Boolean usuarioExistente=false;
+        try {
+            usuarioExistente=  loginService.salvarNuevoUsuario(usuarioEntity);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if(usuarioExistente == false){
+            modelAndView.addObject("modalEmailExits",true);
+            modelAndView.setViewName("crearUsuario");
+            return modelAndView;
+        }
         modelAndView.setViewName("login");
         return modelAndView;
     }
@@ -49,7 +59,7 @@ public class LoginController {
     @GetMapping("/indexPr")
     ModelAndView home() {
         ModelAndView modelAndView= new ModelAndView();
-        modelAndView.setViewName("indexPr");
+        modelAndView.setViewName("index");
         return modelAndView;
     }
 

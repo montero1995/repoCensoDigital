@@ -6,6 +6,7 @@ import com.ve.censodigital.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -33,6 +34,9 @@ public class LoginService {
         }
 
         try {
+            BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(4);
+            usuarioEntity.setContraseña(bCryptPasswordEncoder.encode(usuarioEntity.getContraseña()));
+            usuarioEntity.setEmailUsuario(usuarioEntity.getEmailUsuario().toLowerCase());
             usuarioRepository.save(usuarioEntity);
         } catch (Exception e) {
             e.printStackTrace();

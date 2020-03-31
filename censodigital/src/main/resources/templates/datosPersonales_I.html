@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div th:replace="fragments/headerDashboard :: header-css"/>
+</head>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+
+        <div th:replace="fragments/sideBarMenu :: sideBarMenu"/>
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <br/>
+            <div class="col-md-12 ">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Datos Personales I
+                            <small></small>
+                        </h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br/>
+                        <form class="form-label-left input_mask" data-parsley-validate="true" th:action="@{/situacionVivienda}" th:object="${censoDigitalEntity}" method="post">
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <input type="text" style="text-align: center" class="form-control " id="nombrePersona"
+                                       placeholder="Nombres" required="true"
+                                       th:name="nombrePersona">
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <input type="text" class="form-control" style="text-align: center"  id="apellidoPersona" th:name="apellidoPersona"
+                                       required="true"
+                                       placeholder="Apellidos">
+                            </div>
+
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <input type="text" class="form-control" style="text-align: center"  id="cedula" th:name="cedula" required="true"
+                                       placeholder="Número de Cedula">
+
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <select class="form-control" id="nacionalidad" th:object="${nacionalidadEntityList}"
+                                        th:name="nacionalidadEntity"
+                                        required="true" style="width: 100%; float: left; text-align-last:center">
+                                    <option value="">Nacionalidad</option>
+                                    <option th:each="nacionalidadList : ${nacionalidadEntityList}"
+                                            th:text=" ${nacionalidadList.nacionalidad}"
+                                            th:value="${nacionalidadList.idNacionalidad}">
+                                    </option>
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <input type="text" class="form-control" id="fechaNacimiento"  style="text-align: center"  th:name="fechaNacimiento"
+                                       placeholder="Fecha de Nacimiento"
+                                       onfocus="(this.type='date')"
+                                       onblur="(this.type='text')"
+                                       required="true" >
+
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <input type="text" class="form-control" id="edad" style="text-align: center"  th:name="edad" required="true"
+                                       placeholder="Edad">
+
+                            </div>
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <input type="email" class="form-control" id="emailPersona" style="text-align: center"  th:name="emailPersona" required="true"
+                                       placeholder="Correo Electronico">
+
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <input type="text" class="form-control" id="tlfHabitacionPersona" style="text-align: center"  th:name="tlfHabitacionPersona" required="false"
+                                       placeholder="Telefono Habitación">
+
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <input type="text" class="form-control" id="tlfCelularPersona" style="text-align: center"  th:name="tlfCelularPersona" required="true"
+                                       placeholder="Telefono Celular">
+
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <input type="text" class="form-control" id="tlfOficinaPersona" style="text-align: center"  th:name="tlfOficinaPersona" required="false"
+                                       placeholder="Telefono Oficina">
+
+                            </div>
+
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <select class="form-control" id="cne" th:name="cne"
+                                        required="true" style="width: 100%; float: left; text-align-last:center">
+                                    <option value="">Cne</option>
+                                    <option th:value="S">Sí
+                                    </option>
+                                    <option th:value="N">No
+                                    </option>
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <input type="text" class="form-control" id="tiempoComunidad"  style="text-align: center"  th:name="tiempoComunidad"
+                                       required="true" placeholder="Tiempo en la comunidad">
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <select class="form-control" id="sexo" th:object="${sexoEntityList}"
+                                        th:name="sexoEntity"
+                                        required="true" style="width: 100%; float: left; text-align-last:center">
+                                    <option value="">Genero</option>
+                                    <option th:each="sexoList : ${sexoEntityList}"
+                                            th:text=" ${sexoList.sexo}"
+                                            th:value="${sexoList.idSexo}">
+                                    </option>
+                                </select>
+
+                            </div>
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <select class="form-control" id="incapacidad"  th:name="incapacidad"
+                                        required="true" style="width: 100%; float: left; text-align-last:center">
+                                    <option value="">Incapacidad</option>
+                                    <option th:value="S">Sí
+                                    </option>
+                                    <option th:value="N">No
+                                    </option>
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <select class="form-control" id="pensionado" th:name="pensionado"
+                                        required="true" style="width: 100%; float: left; text-align-last:center">
+                                    <option value="">Pensionado</option>
+                                    <option th:value="S">Sí
+                                    </option>
+                                    <option th:value="N">No
+                                    </option>
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <select class="form-control" id="estadoCivilEntity" th:object="${estadoCivilEntityList}"
+                                        th:name="estadoCivilEntity"
+                                        required="true" style="width: 100%; float: left; text-align-last:center">
+                                    <option value="">Estado Civil</option>
+                                    <option th:each="estadoCivilList : ${estadoCivilEntityList}"
+                                            th:text=" ${estadoCivilList.descripcion}"
+                                            th:value="${estadoCivilList.idEstadoCivil}">
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <select class="form-control" id="nivelInstruccionEntity" th:object="${nivelInstruccionEntityList}"
+                                        th:name="nivelInstruccionEntity"
+                                        required="true" style="width: 100%; float: left; text-align-last:center">
+                                    <option value="">Nivel Instrucción</option>
+                                    <option th:each="nivelInstruccionList : ${nivelInstruccionEntityList}"
+                                            th:text=" ${nivelInstruccionList.nivelInstruccion}"
+                                            th:value="${nivelInstruccionList.idNivelInstruccion}">
+                                    </option>
+                                </select>
+                            </div>
+
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <input type="text" class="form-control" style="text-align: center"  id="profesionOficio" th:name="profesionOficio"
+                                       required="true"
+                                       placeholder="Profesión o Oficio">
+                            </div>
+
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <select class="form-control" id="trabaja" th:name="trabaja"
+                                        required="true" style="width: 100%; float: left; text-align-last:center">
+                                    <option value="">Trabaja</option>
+                                    <option th:value="S">Sí
+                                    </option>
+                                    <option th:value="N">No
+                                    </option>
+                                </select>
+
+                            </div>
+                            <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                <select class="form-control" id="embarazoTemprano" th:name="embarazoTemprano"
+                                        required="false" style="width: 100%; float: left; text-align-last:center">
+                                    <option value="">Embarazo Temprano</option>
+                                    <option th:value="S">Sí
+                                    </option>
+                                    <option th:value="N">No
+                                    </option>
+                                </select>
+                            </div>
+                                <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                    <select class="form-control" id="frecuenciaIngresoEntity" th:object="${frecuenciaIngresoEntityList}"
+                                            th:name="frecuenciaIngresoEntity"
+                                            required="true" style="width: 100%; float: left; text-align-last:center">
+                                        <option value="">Frecuencia Ingreso</option>
+                                        <option th:each="frecuenciaIngresoList : ${frecuenciaIngresoEntityList}"
+                                                th:text=" ${frecuenciaIngresoList.frecuencia}"
+                                                th:value="${frecuenciaIngresoList.idFrecuenciaIngreso}">
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6  form-group has-feedback">
+                                    <select class="form-control" id="cantidadIngresoEntity" th:object="${cantidadIngresoEntityList}"
+                                            th:name="cantidadIngresoEntity"
+                                            required="true" style="width: 100%; float: left; text-align-last:center">
+                                        <option value="">Cantidad Ingreso</option>
+                                        <option th:each="cantidadIngresoList : ${cantidadIngresoEntityList}"
+                                                th:text=" ${cantidadIngresoList.cantidad}"
+                                                th:value="${cantidadIngresoList.idCantidadIngreso}">
+                                        </option>
+                                    </select>
+                                </div>
+
+
+
+                            <div class="col-md-12">
+                                <a type="button" class="btn btn-primary" style="width: 40%;float: left" href="indexPr">
+                                    Cancelar</a>
+                                <button type="submit" class="btn btn-success" style="width: 40%;float: right">Siguiente
+                                </button>
+                            </div>
+                            <!--</div>-->
+
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    <!-- /page content -->
+
+</div>
+</div>
+<!-- footer content -->
+<div th:replace="fragments/footerDashboard :: footer"/>
+<!-- /footer content -->
+</body>
+</html>
