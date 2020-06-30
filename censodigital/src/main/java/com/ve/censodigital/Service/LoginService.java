@@ -43,7 +43,18 @@ public class LoginService {
         }
         return true;
     }
-
+public  void guardarNuevaContraseña(String email,String password){
+        UsuarioEntity usuarioEntity = new UsuarioEntity();
+    usuarioEntity = usuarioRepository.findByEmailUsuario(email);
+    try {
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(4);
+        usuarioEntity.setContraseña(bCryptPasswordEncoder.encode(password));
+        usuarioEntity.setEmailUsuario(email.toLowerCase());
+        usuarioRepository.save(usuarioEntity);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
     public List<GrantedAuthority> obtenerRol(String rol) {
          rol="Administrador";
         List<GrantedAuthority> auths = new ArrayList<>();
@@ -51,6 +62,29 @@ public class LoginService {
         auths.add(new SimpleGrantedAuthority(rol));
 
         return auths;
+    }
+
+    public  boolean existeMail(String email){
+        UsuarioEntity existeUsuario = new UsuarioEntity();
+
+        try {
+            existeUsuario = usuarioRepository.findByEmailUsuario(email);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (existeUsuario !=null) {
+            return true;
+        }
+        return false;
+    }
+
+    public void actualizarContrasenia(String email,String newPassword){
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(4);
+        usuarioRepository.findByEmailUsuario(email);
+        UsuarioEntity usuarioEntity = new UsuarioEntity();
+        usuarioEntity=usuarioRepository.findByEmailUsuario(email);
+        usuarioEntity.setContraseña(bCryptPasswordEncoder.encode(newPassword));
+        usuarioRepository.save(usuarioEntity);
     }
 
 }

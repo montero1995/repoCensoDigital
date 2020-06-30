@@ -36,6 +36,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/crearUsuario").permitAll()
                 .antMatchers("/indexPr").permitAll()
                 .antMatchers("/guardarUsuario").permitAll()
+                .antMatchers("/mailOlvidoContraseña").permitAll()
+                .antMatchers("/guardarNuevaContraseña").permitAll()
 
                 .anyRequest().authenticated()
                 .and()

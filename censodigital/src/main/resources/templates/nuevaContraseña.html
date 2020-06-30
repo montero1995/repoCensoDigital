@@ -35,19 +35,19 @@
     <div class="container-login100"
          th:style="'background: url(/img/bg-01.jpg) no-repeat center center fixed;background-size: cover;'">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-            <form class="login100-form validate-form"  method="post" th:action="@{/mailOlvidoContraseña}">
+            <form class="login100-form validate-form" method="post" th:object="${email}"  th:action="@{/guardarNuevaContraseña}" >
 					<span class="login100-form-title p-b-49">
 						Recuperar Contraseña
 					</span>
-
-                <div class="wrap-input100 validate-input m-b-23" data-validate="Correo es requerido">
+                <div class="wrap-input100 validate-input m-b-23" required="true">
                     <span class="label-input100">Correo</span>
-                    <input class="input100" type="text" name="email" placeholder="Escriba su correo">
+                    <input class="input100" type="text" readonly="true" name="email" th:field="*{email}">
                     <span class="focus-input100" data-symbol="&#xf206;"></span>
                 </div>
-                <div class="wrap-input100 validate-input m-b-23" data-validate="Correo es requerido">
-                    <span class="label-input100">Contraseña</span>
-                    <input class="input100" type="password" name="password" placeholder="Escriba su nueva contraseña">
+
+                <div class="wrap-input100 validate-input m-b-23" required="true">
+                    <span class="label-input100">Nueva Contraseña</span>
+                    <input class="input100" type="text" name="password" placeholder="Escriba su nueva contraseña">
                     <span class="focus-input100" data-symbol="&#xf206;"></span>
                 </div>
                 <div class="text-right p-t-8 p-b-31">
@@ -58,7 +58,7 @@
     width: 40%;">
                     <div class="wrap-login100-form-btn">
                         <div class="login100-form-bgbtn"></div>
-                        <button  type="submit" class="login100-form-btn" style="text-align: center;  text-transform: none">
+                        <button class="login100-form-btn" style="text-align: center;  text-transform: none">
                             Guardar
                         </button>
                     </div>

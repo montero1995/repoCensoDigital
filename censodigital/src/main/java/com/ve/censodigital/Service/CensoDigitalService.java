@@ -303,4 +303,15 @@ public class CensoDigitalService {
             e.printStackTrace();
         }
     }
+
+    public List<CensoDigitalEntity> obtenerTodosLosCensos(){
+        List<CensoDigitalEntity> censoDigitalEntityList = new ArrayList<>();
+        try {
+            censoDigitalEntityList=  censoDigitalRepository.findAll();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return censoDigitalEntityList;
+    }
 }
